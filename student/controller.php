@@ -114,13 +114,16 @@ window.location ="student_message.php";
 		if (isset($_POST['changePass'])) {
 			
 				if (count($_POST) > 0) {
-				    $result = mysqli_query($conn, "SELECT * from users WHERE userId='" . $_SESSION["userId"] . "'");
+					$sql = "SELECT * from student WHERE student_id ='$session_id'";
+					$result = $con->query($sql);
+				  //  $result = mysqli_query($con, "SELECT * from student WHERE student_id ='session_id'");
 				    $row = mysqli_fetch_array($result);
 				    if ($_POST["op"] == $row["password"]) {
-				        mysqli_query($conn, "UPDATE users set password='" . $_POST["cp"] . "' WHERE userId='" . $_SESSION["userId"] . "'");
-				        $message = "Password Changed";
+				        mysqli_query($con, "UPDATE student set password='" . $_POST["cp"] . "' WHERE student_id='$session_id'");
+				        
+				        	echo "<script> alert('pass channged successfully'); window.location='index.php'; </script>";
 				    } else
-				        $message = "Current Password is not correct";
+				       echo "<script> alert('password not channged successfully'); window.location='index.php?q=changePassword'; </script>";
 				}
 		}
 

@@ -5,7 +5,7 @@
                         <!-- block -->
                         <div id="block_bg" class="block">
                             <div class="navbar navbar-inner block-header">
-                            	<form action="controller.php" class="form-signin" method="changePass">
+                            	<form action="controller.php" class="form-signin" method="POST">
 									<h3 class="form-signin-heading"><i class="icon-lock"></i> Password Update</h3>
 									<label>Current Password</label>
 									<input type="text" class="input-block-level" id="op" name="op" placeholder="Enter Current password" required>
@@ -15,7 +15,7 @@
 
 									<label>Confirm Password</label>
 									<input type="password" class="input-block-level" id="cp" name="cp" placeholder="Re-type password" onFocusout='checkpass()' required>
-									<button data-placement="right" title="Click Here to Sign In" name="login" class="btn btn-success" type="submit"><i class="icon-signin icon-large"></i> Sign in</button>
+									<button data-placement="right" title="Click Here to Sign In" name="changePass" class="btn btn-success" type="submit"><i class="icon-signin icon-large"></i> Sign in</button>
 																
 							</form>
 							
